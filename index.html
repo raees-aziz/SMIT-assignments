@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random color picker</title>
+</head>
+<style>
+    /* body {
+        background: #12345678;
+    } */
+</style>
+
+<body>
+    <h1>Random Color Picker</h1>
+    <button onclick="color()">Click</button>
+
+    <span id="color_name"></span>
+
+    <script>
+        console.clear()
+        let color_name = document.getElementById('color_name')
+        let numbers = '1234567890'
+        //using function to get 7 random number and make a color
+
+
+        function color() {
+            let rand_color = ''
+            // using loop 
+            for (i = 0; i < 8; i++) {
+                let rand = Math.floor(Math.random() * numbers.length)
+                rand_color += numbers[rand]
+            }
+            let body = document.querySelector('body');
+            body.style.background = '#' + rand_color
+            color_name.innerText = '#' + rand_color
+            console.log(color_name)
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>
